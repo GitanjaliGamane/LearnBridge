@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard - LearnBridge</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #6c7c8c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .dashboard-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .dashboard-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 800px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .dashboard-card h2 {
+            margin-bottom: 10px;
+            color: #6c7c8c;
+        }
+
+        .dashboard-card p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .dashboard-button {
+            display: inline-block;
+            background-color: #6c7c8c;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .dashboard-button:hover {
+            background-color: #4b5d63;
+        }
+
+        footer {
+            background-color: #6c7c8c;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Teacher Dashboard</div>
+    </header>
+
+    <div class="dashboard-container">
+        <div class="dashboard-card">
+            <h2>Welcome, Teacher!</h2>
+            <p>Manage your classes, track progress, and interact with students.</p>
+        </div>
+
+        <div class="dashboard-card">
+            <h2>Your Classes</h2>
+            <p>You have <strong>3</strong> active classes this week.</p>
+            <button class="dashboard-button">View Classes</button>
+        </div>
+
+        <div class="dashboard-card">
+            <h2>Student Messages</h2>
+            <p>You have <strong>5</strong> new messages from students.</p>
+            <button class="dashboard-button">View Messages</button>
+        </div>
+
+        <div class="dashboard-card">
+            <h2>Schedule</h2>
+            <p>Upcoming class: <strong>Math - 10:00 AM, Monday</strong></p>
+            <button class="dashboard-button">View Schedule</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 YourPlatform. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>

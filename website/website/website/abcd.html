@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnBridge</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #add8e6;
+            padding: 20px 200px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 100px;
+            text-align: center;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            text-align: center;
+            margin-left: 90px;
+        }
+        .navbar ul li a:hover {
+            color: #000080;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            margin: 20;
+            padding-top: 100px;
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1, h2 {
+            color: #1A73E8;
+        }
+        p {
+            color: #444;
+            line-height: 1.6;
+            text-align: justify;
+            text-align: center;
+        }
+        li {
+            color: #444;
+            line-height: 1.6;
+            text-align: justify;
+            
+        }
+        .about-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .vision-mission-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 45%;
+            text-align: center;
+        }
+        .team-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            text-align: center;
+        }
+        .team {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .team-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .member {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+        }
+        .member h3 {
+            color: #1A73E8;
+        }
+        .member {
+    background: white;
+    padding: 30px; /* Increased padding for a larger feel */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Increased width */
+    text-align: center;
+}
+
+.member img {
+    width: 150px; /* Increased image size */
+    height: 150px; /* Increased image size */
+    border-radius: 50%; /* Makes the image round */
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Learnbridge</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div style="width: 100%; margin-top: 5px; padding: 20px; font-family: Arial, sans-serif;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto;">
+            <div style="width: 55%; text-align: left;">
+                <h1 style="color: #333;">Welcome to LearnBridge</h1>
+                <p style="color: #555; line-height: 1.6;">
+                    In today’s fast-paced world, students often struggle to find the right tutors for academic support, skill development, or exam preparation. Limited access to qualified teachers, busy schedules, and the challenge of attending in-person sessions can make learning difficult.
+                </p>
+                <p style="color: #555; line-height: 1.6;">
+                    LearnBridge is a community-driven platform designed to bridge this gap by connecting passionate educators—including home tutors, special educators, and skilled hobbyists—with students who need additional training beyond their formal education.
+                </p>
+            </div>
+            <div style="width: 40%; background: #f9f9f9; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                <h1 style="color: #333; text-align: center;">Welcome to LearnBridge</h1>
+                <p style="color: #555; text-align: center;">Please select your login type</p>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <a href="student_login.html" style="display: block; padding: 10px; margin: 10px 0; background: #007bff; color: white; text-decoration: none; border-radius: 5px; width: 80%; text-align: center;">Student Login</a>
+                    <a href="teacher_login.html" style="display: block; padding: 10px; margin: 10px 0; background: #007bff; color: white; text-decoration: none; border-radius: 5px; width: 80%; text-align: center;">Teacher Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="width: 100%; margin-top: 40px; padding: 20px; background-color: white; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 8px;">
+        <h2 style="text-align: center; font-size: 24px; font-weight: 600; margin-bottom: 20px;">How It Works</h2>
+        <div style="position: relative; display: flex; align-items: center; overflow: hidden;">
+            <button onclick="document.getElementById('scrollContent').scrollBy({ left: -400, behavior: 'smooth' });" style="position: absolute; left: 0; background-color: white; padding: 12px; border-radius: 50%; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); border: none; cursor: pointer;">&#9664;</button>
+            <div id="scrollContent" style="display: flex; overflow-x: auto; gap: 24px; padding: 16px; border-radius: 8px; scroll-behavior: smooth; scrollbar-width: none; width: 100%;">
+                <div style="flex: 0 0 300px; padding: 24px; border-left: 4px solid #3b82f6; background-color: #f3f4f6; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">Step 1: Sign Up & Profile Creation</h3>
+                    <p style="font-size: 16px; color: #4b5563;">Students & Tutors register on the platform by providing basic details. Tutors pay a one-time registration fee to activate their profile.</p>
+                </div>
+                <div style="flex: 0 0 300px; padding: 24px; border-left: 4px solid #3b82f6; background-color: #f3f4f6; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">Step 2: Search & Smart Matching</h3>
+                    <p style="font-size: 16px; color: #4b5563;">Students search for tutors based on subjects, availability, and learning needs. The system suggests top 4-5 tutors who best match their requirements.</p>
+                </div>
+                <div style="flex: 0 0 300px; padding: 24px; border-left: 4px solid #3b82f6; background-color: #f3f4f6; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">Step 3: Tutor Selection & Payment</h3>
+                    <p style="font-size: 16px; color: #4b5563;">Students review tutor profiles, check ratings, and make a selection. To connect, they pay a small service charge (a percentage of one month’s tuition fee).</p>
+                </div>
+                <div style="flex: 0 0 300px; padding: 24px; border-left: 4px solid #3b82f6; background-color: #f3f4f6; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">Step 4: Connect & Start Learning</h3>
+                    <p style="font-size: 16px; color: #4b5563;">Once payment is made, students and tutors receive each other’s contact details. They schedule sessions and begin learning.</p>
+                </div>
+                <div style="flex: 0 0 300px; padding: 24px; border-left: 4px solid #3b82f6; background-color: #f3f4f6; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">Step 5: Feedback & Continuous Learning</h3>
+                    <p style="font-size: 16px; color: #4b5563;">Students can rate and review tutors after sessions. They can continue learning with the same tutor or explore new ones for different subjects.</p>
+                </div>
+            </div>
+            <button onclick="document.getElementById('scrollContent').scrollBy({ left: 400, behavior: 'smooth' });" style="position: absolute; right: 0; background-color: white; padding: 12px; border-radius: 50%; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); border: none; cursor: pointer;">&#9654;</button>
+        </div>
+    </div>
+
+ <div class="container">
+        <div class="about-section">
+            <h1>About Us – LearnBridge</h1>
+            <p>At LearnBridge, we believe that education should be accessible, flexible, and tailored to individual needs. Many students struggle to find the right tutors due to location constraints, busy schedules, or a lack of qualified educators. We aim to solve this by connecting passionate tutors with students who need additional learning support—whether for academics, skill development, or exam preparation.</p>
+            <p>Our platform brings together home tutors, special educators, and skilled hobbyists who are eager to share their knowledge. By using a smart matching system, we help students find the best-suited tutors based on their preferences like subjects, timing, and availability.</p>
+        </div>
+        
+        <div class="vision-mission-container">
+            <div class="card">
+                <h2>Our Vision</h2>
+                <p>To create a world where quality education is accessible to everyone, anytime, anywhere, by connecting passionate educators with students who seek to learn and grow beyond traditional classrooms.</p>
+            </div>
+            <div class="card">
+                <h2>Our Mission</h2>
+                <ul>
+                    <li><strong>Bridge the Learning Gap –</strong> Provide a seamless platform where students can easily connect with qualified tutors for academic and skill-based learning.</li>
+                    <li><strong>Empower Educators –</strong> Offer a space for tutors, special educators, and skilled individuals to share their knowledge and earn through teaching.</li>
+                    <li><strong>Enhance Accessibility –</strong> Ensure that students from all backgrounds can find the right mentor, regardless of location constraints.</li>
+                    <li><strong>Promote Flexible Learning –</strong> Enable students to learn at their own pace, choosing tutors based on their availability and needs.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="team-card">
+            <h2>Meet Our Team</h2>
+            <div class="team">
+                <div class="team-row">
+                    <div class="member">
+                        <img src="gitanjali.jpeg" alt="Gitanjali Gamane">
+                        <h3>Gitanjali Gamane</h3>
+                        <p>Developer</p>
+                    </div>
+                    <div class="member">
+                        <img src="website.jpeg" alt="Sneha Kamble">
+                        <h3>Sneha Kamble</h3>
+                        <p>Developer</p>
+                    </div>
+                </div>
+                <div class="team-row">
+                    <div class="member">
+                        <img src="mitali.jpeg" alt="Mitali Chaudhari">
+                        <h3>Mitali Chaudhari</h3>
+                        <p>Developer</p>
+                    </div>
+                    <div class="member">
+                        <img src="website.jpeg" alt="Sejal Jain">
+                        <h3>Sejal Jain</h3>
+                        <p>Developer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

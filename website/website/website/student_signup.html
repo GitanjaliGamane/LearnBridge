@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Signup - LearnBridge</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #e3f2fd;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #6c7c8c; /* Dull Blue */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Logo Styling */
+        header .logo {
+            font-size: 36px;
+            font-weight: 600;
+            color: #ffb300; /* Logo color */
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        header .logo:hover {
+            color: #fff; /* Hover effect on logo */
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow effect */
+        }
+
+        header nav {
+            margin-top: 20px;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        header nav ul li {
+            margin: 0 25px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s ease-in-out;
+        }
+
+        header nav ul li a:hover {
+            background-color: #ffb300;
+            transform: scale(1.1);
+        }
+
+        /* Main Section */
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 40px 20px; /* Added padding to ensure separation */
+            margin-top: 20px; /* Space between header and form */
+            margin-bottom: 20px; /* Space between footer and form */
+        }
+
+        /* Signup Box */
+        .signup-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            width: 100%;
+            max-width: 480px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .signup-box h1 {
+            margin-bottom: 20px;
+            font-size: 32px;
+            color: #6c7c8c; /* Dull Blue */
+            font-weight: 700;
+        }
+
+        .signup-box p {
+            margin-bottom: 25px;
+            font-size: 18px;
+            color: #666;
+        }
+
+        .signup-input,
+        .signup-select,
+        .signup-radio,
+        .signup-area-input {
+            width: 100%;
+            padding: 12px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+
+        .signup-input:focus,
+        .signup-select:focus {
+            border: 1px solid #6c7c8c; /* Dull Blue */
+            outline: none;
+        }
+
+        .signup-button {
+            display: inline-block;
+            background-color: #6c7c8c; /* Dull Blue */
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            margin: 15px 0;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s, transform 0.2s ease-in-out;
+        }
+
+        .signup-button:hover {
+            background-color: #4b5d63; /* Slightly darker dull blue */
+            transform: translateY(-3px); /* Adds a lifting effect */
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #6c7c8c; /* Dull Blue */
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        /* Skills Dropdown */
+        #skills-dropdown-container {
+            display: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header .logo {
+                font-size: 28px;
+            }
+
+            header nav ul li {
+                margin: 0 10px;
+            }
+
+            header nav ul li a {
+                font-size: 14px;
+            }
+
+            .signup-box {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section with Logo and Navigation Menu -->
+    <header>
+        <div class="logo">LearnBridge</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Section with Signup Form -->
+    <div class="main-container">
+        <!-- Signup Box -->
+        <div class="signup-box">
+            <h1>Create Student Account</h1>
+            <p>Fill in the details below to create your account</p>
+            <form id="signupForm">
+                <!-- Name -->
+                <input type="text" class="signup-input" placeholder="Full Name" name="name" id="name" required>
+
+                <!-- Age -->
+                <input type="number" class="signup-input" placeholder="Age" name="age" id="age" required>
+
+                <!-- Contact Number -->
+                <input type="tel" class="signup-input" placeholder="Contact Number" name="contact" id="contact" required>
+
+                <!-- Board Dropdown -->
+                <select class="signup-select" name="board" id="board" required>
+                    <option value="">Select Board</option>
+                    <option value="cbse">CBSE</option>
+                    <option value="icse">ICSE</option>
+                    <option value="state">State Board</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <!-- Class Dropdown -->
+                <div id="class-dropdown-container">
+                    <select class="signup-select" name="class" id="class" required>
+                        <option value="">Select Class</option>
+                        <option value="1">1st</option>
+                        <option value="2">2nd</option>
+                        <option value="3">3rd</option>
+                        <option value="4">4th</option>
+                        <option value="5">5th</option>
+                        <option value="6">6th</option>
+                        <option value="7">7th</option>
+                        <option value="8">8th</option>
+                        <option value="9">9th</option>
+                        <option value="10">10th</option>
+                        <option value="11">11th</option>
+                        <option value="12">12th</option>
+                    </select>
+		
+			
+                </div>
+		
+		<div id="skills-checkbox-container" style="display: none; text-align: left;">
+    			<p>Select Skills:</p>
+    				<label><input type="checkbox" name="skills" value="painting"> Painting</label><br>
+    				<label><input type="checkbox" name="skills" value="singing"> Singing</label><br>
+    				<label><input type="checkbox" name="skills" value="yoga"> Yoga</label><br>
+    				<label><input type="checkbox" name="skills" value="dancing"> Dancing</label><br>
+    				<label><input type="checkbox" name="skills" value="guitar"> Guitar</label><br>
+    				<label><input type="checkbox" name="skills" value="resin_art"> Resin Art</label><br>
+    				<label><input type="checkbox" name="skills" value="crafting"> Crafting</label><br>
+		</div>
+
+                <!-- Timing -->
+                <input type="text" class="signup-input" placeholder="Preferred Timing (e.g., 3pm - 5pm)" name="timing" id="timing" required>
+
+                <!-- Language Preference Dropdown -->
+                <select class="signup-select" name="language" id="language" required>
+                    <option value="">Select Language Preference</option>
+                    <option value="hindi">Hindi</option>
+                    <option value="english">English</option>
+                    <option value="marathi">Marathi</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <!-- Hours per Week -->
+                <input type="number" class="signup-input" placeholder="Hours per Week" name="hours_per_week" id="hours_per_week" required>
+
+                <!-- Mode (Online / Offline) -->
+                <div class="signup-radio">
+                    <label><input type="radio" name="mode" value="online" required> Online</label>
+                    <label><input type="radio" name="mode" value="offline" required> Offline</label>
+                </div>
+
+                <!-- Skills Dropdown (Multiple Selection) -->
+                
+
+                <!-- Area and City -->
+                <div style="display: flex; justify-content: space-between;">
+                    <input type="text" class="signup-input" placeholder="Area" name="area" id="area" required>
+                    <input type="text" class="signup-input" placeholder="City" name="city" id="city" required>
+                </div>
+
+                <!-- State and Pincode -->
+                <div style="display: flex; justify-content: space-between;">
+                    <input type="text" class="signup-input" placeholder="State" name="state" id="state" required>
+                    <input type="text" class="signup-input" placeholder="Pincode" name="pincode" id="pincode" required>
+                </div>
+
+                <!-- Email and Password -->
+                <input type="email" class="signup-input" placeholder="Email (Username)" name="email" id="email" required>
+                <input type="password" class="signup-input" placeholder="Password" name="password" id="password" required>
+                <input type="password" class="signup-input" placeholder="Confirm Password" name="confirm_password" id="confirm_password" required>
+
+                <!-- Submit Button -->
+                <button type="submit" class="signup-button">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 LearnBridge. All Rights Reserved.</p>
+    </footer>
+
+   <script>
+    // JavaScript to handle dynamic switching between class selection and skills checkboxes
+    document.getElementById('class').addEventListener('change', function () {
+        var classValue = this.value;
+        var skillsCheckboxContainer = document.getElementById('skills-checkbox-container');
+        
+        if (classValue) {
+            // Show skills checkboxes when a class is selected
+            skillsCheckboxContainer.style.display = 'block';
+        } else {
+            // Hide skills checkboxes when no class is selected
+            skillsCheckboxContainer.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+
+</html>

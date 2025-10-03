@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile - LearnBridge</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #e3f2fd;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #6c7c8c; /* Dull Blue */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Logo Styling */
+        header .logo {
+            font-size: 36px;
+            font-weight: 600;
+            color: #ffb300; /* Logo color */
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        header .logo:hover {
+            color: #fff; /* Hover effect on logo */
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow effect */
+        }
+
+        header nav {
+            margin-top: 20px;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        header nav ul li {
+            margin: 0 25px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s ease-in-out;
+        }
+
+        header nav ul li a:hover {
+            background-color: #ffb300;
+            transform: scale(1.1);
+        }
+
+        /* Main Section */
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 40px 20px; /* Added padding to ensure separation */
+            margin-top: 20px; /* Space between header and form */
+            margin-bottom: 20px; /* Space between footer and form */
+        }
+
+        /* Edit Profile Box */
+        .edit-profile-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            width: 100%;
+            max-width: 480px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .edit-profile-box h1 {
+            margin-bottom: 20px;
+            font-size: 32px;
+            color: #6c7c8c; /* Dull Blue */
+            font-weight: 700;
+        }
+
+        .edit-profile-box p {
+            margin-bottom: 25px;
+            font-size: 18px;
+            color: #666;
+        }
+
+        .edit-input,
+        .edit-select,
+        .edit-radio,
+        .edit-area-input {
+            width: 100%;
+            padding: 12px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+
+        .edit-input:focus,
+        .edit-select:focus {
+            border: 1px solid #6c7c8c; /* Dull Blue */
+            outline: none;
+        }
+
+        .edit-button {
+            display: inline-block;
+            background-color: #6c7c8c; /* Dull Blue */
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            margin: 15px 0;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s, transform 0.2s ease-in-out;
+        }
+
+        .edit-button:hover {
+            background-color: #4b5d63; /* Slightly darker dull blue */
+            transform: translateY(-3px); /* Adds a lifting effect */
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #6c7c8c; /* Dull Blue */
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header .logo {
+                font-size: 28px;
+            }
+
+            header nav ul li {
+                margin: 0 10px;
+            }
+
+            header nav ul li a {
+                font-size: 14px;
+            }
+
+            .edit-profile-box {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section with Logo and Navigation Menu -->
+    <header>
+        <div class="logo">LearnBridge</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Section with Edit Profile Form -->
+    <div class="main-container">
+        <!-- Edit Profile Box -->
+        <div class="edit-profile-box">
+            <h1>Edit Profile</h1>
+            <p>Update your details below</p>
+            <form id="editProfileForm">
+                <!-- Name -->
+                <input type="text" class="edit-input" placeholder="Full Name" name="name" id="name" required value="John Doe">
+
+                <!-- Age -->
+                <input type="number" class="edit-input" placeholder="Age" name="age" id="age" required value="25">
+
+                <!-- Contact Number -->
+                <input type="tel" class="edit-input" placeholder="Contact Number" name="contact" id="contact" required value="9876543210">
+
+                <!-- Board Dropdown -->
+                <select class="edit-select" name="board" id="board" required>
+                    <option value="cbse" selected>CBSE</option>
+                    <option value="icse">ICSE</option>
+                    <option value="state">State</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <!-- Class Dropdown -->
+                <select class="edit-select" name="class" id="class" required>
+                    <option value="10" selected>10th</option>
+                    <option value="11">11th</option>
+                    <option value="12">12th</option>
+                </select>
+
+                <!-- Preferred Timing -->
+                <input type="text" class="edit-input" placeholder="Preferred Timing (e.g., 3pm - 5pm)" name="timing" id="timing" required value="3pm - 5pm">
+
+                <!-- Language Preference -->
+                <select class="edit-select" name="language" id="language" required>
+                    <option value="hindi" selected>Hindi</option>
+                    <option value="english">English</option>
+                    <option value="marathi">Marathi</option>
+                </select>
+
+                <!-- Hours per Week -->
+                <input type="number" class="edit-input" placeholder="Hours per Week" name="hours_per_week" id="hours_per_week" required value="10">
+
+                <!-- Mode (Online / Offline) -->
+                <div class="edit-radio">
+                    <label><input type="radio" name="mode" value="online" required checked> Online</label>
+                    <label><input type="radio" name="mode" value="offline" required> Offline</label>
+                </div>
+
+                <!-- Area and City -->
+                <div style="display: flex; justify-content: space-between;">
+                    <input type="text" class="edit-input" placeholder="Area" name="area" id="area" required value="Downtown">
+                    <input type="text" class="edit-input" placeholder="City" name="city" id="city" required value="Metropolis">
+                </div>
+
+                <!-- State and Pincode -->
+                <div style="display: flex; justify-content: space-between;">
+                    <input type="text" class="edit-input" placeholder="State" name="state" id="state" required value="California">
+                    <input type="text" class="edit-input" placeholder="Pincode" name="pincode" id="pincode" required value="90001">
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="edit-button">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 LearnBridge. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Redirect Script -->
+    <script>
+        document.getElementById('editProfileForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent the default form submission
+            window.location.href = 'student_dashboard.html'; // Redirect to student_dashboard.html
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Signup - LearnBridge</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #e3f2fd;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #6c7c8c; /* Dull Blue */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header .logo {
+            font-size: 36px;
+            font-weight: 600;
+            color: #ffb300; /* Logo color */
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        header .logo:hover {
+            color: #fff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        header nav {
+            margin-top: 20px;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        header nav ul li {
+            margin: 0 25px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s ease-in-out;
+        }
+
+        header nav ul li a:hover {
+            background-color: #ffb300;
+            transform: scale(1.1);
+        }
+
+        /* Main Section */
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 40px 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .signup-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            width: 100%;
+            max-width: 480px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .signup-box h1 {
+            margin-bottom: 20px;
+            font-size: 32px;
+            color: #6c7c8c;
+            font-weight: 700;
+        }
+
+        .signup-box p {
+            margin-bottom: 25px;
+            font-size: 18px;
+            color: #666;
+        }
+
+        .signup-input,
+        .signup-select {
+            width: 100%;
+            padding: 12px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+
+        .signup-input:focus,
+        .signup-select:focus {
+            border: 1px solid #6c7c8c;
+            outline: none;
+        }
+
+        .signup-button {
+            display: inline-block;
+            background-color: #6c7c8c;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            margin: 15px 0;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s, transform 0.2s ease-in-out;
+        }
+
+        .signup-button:hover {
+            background-color: #4b5d63;
+            transform: translateY(-3px);
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #6c7c8c;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">LearnBridge</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <div class="signup-box">
+            <h1>Create Staff Account</h1>
+            <p>Fill in the details below to create your account</p>
+            <form id="signupForm">
+                <input type="text" class="signup-input" placeholder="Full Name" id="name" required>
+                <input type="tel" class="signup-input" placeholder="Phone Number" id="phone" required>
+                <input type="text" class="signup-input" placeholder="Subjects" id="subjects" required>
+                <select class="signup-select" id="board" required>
+                    <option value="">Select Board</option>
+                    <option value="cbse">CBSE</option>
+                    <option value="icse">ICSE</option>
+                    <option value="state">State</option>
+                    <option value="other">Other</option>
+                </select>
+                <input type="number" class="signup-input" placeholder="Hours per Week" id="hours_per_week" required>
+                <select class="signup-select" id="expertise" required>
+                    <option value="">Select Expertise Level</option>
+                    <option value="low">Low</option>
+                    <option value="middle">Middle</option>
+                    <option value="high">High</option>
+                </select>
+                <input type="email" class="signup-input" placeholder="Email" id="email" required>
+                <input type="password" class="signup-input" placeholder="Password" id="password" required>
+                <button type="submit" class="signup-button">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 YourPlatform. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            window.location.href = "teacher_dashboard.html";
+        });
+    </script>
+</body>
+</html>

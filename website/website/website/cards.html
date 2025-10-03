@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - LearnBridge</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+        }
+
+        header {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 36px;
+            font-weight: 600;
+            color: #fbbf24;
+        }
+
+        .search-container {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .search-input {
+            width: 60%;
+            padding: 10px;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #1e3a8a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .results-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .teacher-card {
+            background: white;
+            padding: 40px;
+            margin: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        .teacher-card h3 {
+            margin: 10px 0;
+            color: #1e3a8a;
+        }
+
+        .chat-button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #1e3a8a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">LearnBridge</div>
+    </header>
+
+    <div class="search-container">
+        <input type="text" class="search-input" id="search-box" placeholder="Enter subject...">
+        <button class="search-button" onclick="searchTeachers()">Search</button>
+    </div>
+
+    <div class="results-container" id="results"></div>
+
+    <script>
+        function searchTeachers() {
+            let subject = document.getElementById("search-box").value;
+            let resultsContainer = document.getElementById("results");
+            resultsContainer.innerHTML = ""; 
+
+            let teachers = [
+                { name: "John Doe", subject: "Math" },
+                { name: "Jane Smith", subject: "Science" },
+                { name: "Michael Brown", subject: "English" },
+                { name: "Sarah Johnson", subject: "History" },
+                { name: "David Wilson", subject: "Physics" },
+                { name: "Emily Davis", subject: "Chemistry" },
+                { name: "James Anderson", subject: "Biology" },
+                { name: "Laura Martinez", subject: "Geography" },
+                { name: "Robert Thomas", subject: "Computer Science" },
+                { name: "Sophia White", subject: "Economics" },
+                { name: "Daniel Harris", subject: "Psychology" },
+                { name: "Olivia Martin", subject: "Art" },
+                { name: "William Clark", subject: "Music" },
+                { name: "Isabella Rodriguez", subject: "Philosophy" },
+                { name: "Ethan Lewis", subject: "Political Science" },
+                { name: "Mia Walker", subject: "Sociology" },
+                { name: "Alexander Hall", subject: "Business Studies" },
+                { name: "Charlotte Allen", subject: "Engineering" },
+                { name: "Benjamin Young", subject: "Astronomy" },
+                { name: "Ava King", subject: "Environmental Science" },
+                { name: "Liam Wright", subject: "Statistics" },
+                { name: "Emma Scott", subject: "Literature" }
+            ];
+
+            let filteredTeachers = teachers.filter(t => t.subject.toLowerCase().includes(subject.toLowerCase()));
+            
+            filteredTeachers.forEach(t => {
+                let card = document.createElement("div");
+                card.classList.add("teacher-card");
+                card.innerHTML = `<h3>${t.name}</h3><p>${t.subject}</p><button class="chat-button" onclick="startChat('${t.name}')">Chat with Student</button>`;
+                resultsContainer.appendChild(card);
+            });
+        }
+
+        function startChat(teacherName) {
+            window.location.href = `chat_room.html?teacher=${encodeURIComponent(teacherName)}`;
+        }
+    </script>
+</body>
+</html>
